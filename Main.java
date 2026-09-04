@@ -1,28 +1,24 @@
 public class Main {
-    public static void main(String[] args){
-        Produto p1 = new Produto();
-        p1.nome= "Marmita";
-        p1.preco= 24;
-        p1.estoque= 10;
+    public static void main(String[] args) {
 
-        p1.aplicarDesconto();
-        p1.reduzirEstoque();
+        Carro carro1 = new Carro("Ford", "Azul", 2022);
+        Carro carro2 = new Carro("Ferrari", "Vermelha", 2019);
 
-        System.out.println(p1.nome +"- R$" + p1.preco+" estoque- "+ p1.estoque);
+        System.out.println(carro1.getmarca() + " é seminovo? " + carro1.eseminovo());
+        System.out.println(carro2.getmarca() + " é seminovo? " + carro2.eseminovo());
 
-        Carro c1= new Carro();
-        c1.modelo = "Impala";
-        c1.ligar();
-        c1.acelerar();
-        c1.acelerar();
-        System.out.println(c1.velocidade+"km/h");
-        String msg1= c1.desligar();
-        System.out.println(msg1);
+        carro1.acelerar();
+        carro1.acelerar();
+        carro1.frear();
+        carro1.pintar("Preto");
+        System.out.println("Carro1 depois de acelerar 2x, frear 1x e pintar: cor="
+                + carro1.getcor() + ", velocidade=" + carro1.getvelocidade());
 
-        c1.freiar();
-        c1.freiar();
-        String msg2= c1.desligar();
-        System.out.println(msg2);
 
+        CarroEsportivo ferrari = new CarroEsportivo("Ferrari", "Vermelha", 2023);
+        System.out.println("Antes: " + ferrari);
+
+        ferrari.ativarmodoesportivo();
+        System.out.println("Depois: " + ferrari);
     }
 }
